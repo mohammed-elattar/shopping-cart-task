@@ -1,0 +1,66 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="container">
+        <app-card-loader [loop]="3" [height]="800" *ngIf="loading"></app-card-loader>
+        <div class="row" *ngIf="!loading">
+          <!-- List of Products -->
+          <div class="col-sm-4 mb-2" *ngFor="let product of productList">
+            <div class="item">
+              <div class=" mb-r">
+                <!--Card-->
+                <div class="card card-cascade wider">
+                  <!--Card image-->
+                  <a [routerLink]="['/products/product', product.id]">
+                    <div class="view overlay hm-white-slight">
+                      <img [src]="product.imageUrl" class="img-fluid" alt="" width="360px" height="640px">
+                      <a>
+                        <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+                      </a>
+                    </div>
+                  </a>
+                  <!--/.Card image-->
+                  <!--Card content-->
+                  <div class="card-body text-center no-padding">
+                    <!--Category & Title-->
+                    <a class="text-muted">
+                      <h5>Category</h5>
+                    </a>
+                    <p class="card-title">
+                      <strong>
+                        <a [routerLink]="['/products/product', product.id]" routerLinkActive="router-link-active">{{
+                          product.productName }}</a>
+                      </strong>
+                    </p>
+                    <!--Description-->
+                    <p class="card-text">
+                      Description should be here
+                      Description should be here
+                    </p>
+                    <!--Card footer-->
+                    <div class="card-footer">
+                      <span class="left">$ {{ product.service1 }}</span>
+                      <span class="right">
+                        <a placement="top" mdbTooltip="Add to Cart" container="body" (click)="addToCart(product)">
+                          <i class="fa fa-shopping-cart"></i>
+                        </a>
+                      </span>
+                    </div>
+
+                  </div>
+                  <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/.Card-->
+    </div>
+  </div>
+</div>

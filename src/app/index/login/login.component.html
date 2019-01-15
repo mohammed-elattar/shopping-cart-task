@@ -1,0 +1,29 @@
+<br>
+<section class="container">
+
+  <!-- Login form -->
+  <div class="col-sm-6">
+    <form style="width:22rem" #loginForm="ngForm" (ngSubmit)="signInWithEmail(loginForm)">
+      <p class="h5 text-center mb-4">Sign in</p>
+
+      <div class="form-group">
+        <label for="loginEmailId">Email address</label>
+        <input type="email" class="form-control" id="loginEmailId" aria-describedby="emailHelp" placeholder="Enter email"
+          name="emailId" [(ngModel)]="user.emailId" mdbInputValidate [email]="true">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="loginPassword" name="loginPassword" [(ngModel)]="user.loginPassword"
+          autocomplete="current-password" placeholder="Password">
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary waves-light" id="loginButton" mdbRippleRadius>Login</button>
+      </div>
+    </form>
+  </div>
+  <!-- Login form -->
+</section>
+<br>
+<br>
+<br>
